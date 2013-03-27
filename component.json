@@ -1,5 +1,5 @@
 {
-  "name": "stub",
+  "name": "MediaQuery",
   "description": "",
   "version": "0.1.0",
   "keywords": [
@@ -7,8 +7,8 @@
     "x-tag"
   ],
   "main": [
-    "src/main.js",
-    "src/main.css"
+    "src/mediaquery.js",
+    "src/mediaquery.css"
   ],
   "dependencies": {
     "x-tag-core": "*"

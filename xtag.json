@@ -1,25 +1,16 @@
-{
-	"name": "stub",
-	"tagName": "x-stub",
-	"version": "0.1.0",
-	"author": "you",
-	"description": "",
-	"demo": "demo/index.html",
-	"categories": [],
-	"compatibility": {
-		"firefox": 5,
-		"chrome": 4,
-		"ie": 9,
-		"opera": 12,
-		"android": 2.1,
-		"ios": 4
-	},
-	"documentation": {
-		"description": "",
-		"attributes": {},
-		"events": {},
-		"methods": {},
-		"getters": {},
-		"setters": {}
-	}
+{ 
+  "name": "MediaQuery",
+  "tagName": "x-mediaquery",
+  "version": "0.1.0",
+  "author": "Daniel Buchner",
+  "description": "An element that allows you to target markup blocks based on query matching, execute media query action x-tags that perform specific tasks (moving an element in the DOM, deleting elements if found, etc), more easily react to changes in query states using auto-generated event listeners",
+  "categories": ["behavioral"],
+  "compatibility": {  
+    "firefox": 6,
+    "chrome": 9,
+    "ie": 9,
+    "opera": 12,
+    "android": 2.1,
+    "ios": 5
+  }
 }
