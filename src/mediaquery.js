@@ -1,12 +1,12 @@
 
 (function(){
-  
+
   var delayedEvents = [],
     fireMatches = function(element, mql, attr, skipFire){
       var state = (mql.matches) ? ['active', 'set', 'add'] : ['inactive', 'remove', 'remove'],
         eventType = 'mediaquery' + state[0],
         eventData = { 'query': mql };
-      element[state[1] + 'Attribute']('matches', null);     
+      element[state[1] + 'Attribute']('matches', null);
       if (!skipFire) xtag.fireEvent(element, eventType, eventData);
       (attr || (element.getAttribute('for') || '').split(' ')).forEach(function(id){
         var node = document.getElementById(id);
@@ -38,20 +38,20 @@
       });
       document.removeEventListener(delayedListener);
     };
-    
+
   document.addEventListener('__DOMComponentsLoaded__', delayedListener);
-  
+
   xtag.register('x-mediaquery', {
     lifecycle:{
       created: function(){
-        attachQuery(this);  
+        attachQuery(this);
       }
     },
     accessors:{
       'for': {
         get: function(){
           return this.getAttribute('for');
-        }, 
+        },
         set: function(value){
           var next = (value || '').split(' ');
           (this.getAttribute('for') || '').split(' ').map(function(id){
@@ -69,18 +69,20 @@
         }
       },
       'media': {
+        attribute: {},
         get: function(){
           return this.getAttribute('media');
-        }, 
-        'set:attribute(media)': function(value){
+        },
+        set: function(value){
           attachQuery(this, query);
         }
       },
       'id': {
+        attribute: {},
         get: function(){
           return this.getAttribute('id');
-        }, 
-        'set:attribute(id)': function(value){
+        },
+        set: function(value){
           var current = this.getAttribute('id');
           xtag.query(document, '.' + current).forEach(function(node){
             xtag.removeClass(node, current);
@@ -90,5 +92,5 @@
       }
     }
   });
-  
+
 })();
