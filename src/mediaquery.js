@@ -73,7 +73,7 @@
         get: function(){
           return this.getAttribute('media');
         },
-        set: function(value){
+        set: function(query){
           attachQuery(this, query);
         }
       },
@@ -86,7 +86,7 @@
           var current = this.getAttribute('id');
           xtag.query(document, '.' + current).forEach(function(node){
             xtag.removeClass(node, current);
-            xtag.addClass(node, id);
+            xtag.addClass(node, value);
           });
         }
       }
