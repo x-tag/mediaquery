@@ -1,7 +1,7 @@
 {
   "name": "MediaQuery",
   "tagName": "x-mediaquery",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Daniel Buchner",
   "description": "An element that allows you to target markup blocks based on query matching, execute media query action x-tags that perform specific tasks (moving an element in the DOM, deleting elements if found, etc), more easily react to changes in query states using auto-generated event listeners",
   "demo": "demo/index.html",
