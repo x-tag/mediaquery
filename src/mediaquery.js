@@ -17,9 +17,11 @@
       });
     },
     attachQuery = function(element, query, attr, skipFire){
-      if (!xtag.domready){
+      if (!/in/.test(document.readyState)){
         skipFire = true;
-        delayedEvents.push(element);
+        if (delayedEvents.indexOf(element) == -1){
+          delayedEvents.push(element);
+        }
       }
       query = query || element.getAttribute('media');
       if (query){
@@ -36,17 +38,12 @@
       delayedEvents = delayedEvents.map(function(element){
         return attachQuery(element);
       });
-      document.removeEventListener(delayedListener);
+      document.removeEventListener('DOMComponentsLoaded', delayedListener);
     };
 
-  document.addEventListener('__DOMComponentsLoaded__', delayedListener);
+  document.addEventListener('DOMComponentsLoaded', delayedListener);
 
   xtag.register('x-mediaquery', {
-    lifecycle:{
-      created: function(){
-        attachQuery(this);
-      }
-    },
     accessors:{
       'for': {
         get: function(){
