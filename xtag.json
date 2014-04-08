@@ -1,7 +1,7 @@
 {
   "name": "MediaQuery",
   "tagName": "x-mediaquery",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Daniel Buchner",
   "description": "MediaQuery is a convenience element that allows you to define common form factor media queries, that when active, will apply a class to certain elements for easy targeting.",
   "demo": "demo/index.html",
