@@ -9,7 +9,7 @@
       element[state[1] + 'Attribute']('matches', null);
       if (!skipFire) xtag.fireEvent(element, eventType, eventData);
       (attr || (element.getAttribute('for') || '').split(' ')).forEach(function(id){
-        var node = document.getElementById(id);
+        var node = document.querySelector(id);
         if (node) {
           xtag[state[2] + 'Class'](node, element.id);
           if (!skipFire) xtag.fireEvent(node, eventType, eventData, { bubbles: false });
@@ -54,7 +54,7 @@
           (this.getAttribute('for') || '').split(' ').map(function(id){
             var index = next.indexOf(id);
             if (index == -1){
-              var element = document.getElementById(id);
+              var element = document.querySelector(id);
               if (element){
                 xtag.removeClass(element, this.id);
                 xtag.fireEvent(element, 'mediaqueryremoved');
