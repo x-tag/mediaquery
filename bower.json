@@ -1,7 +1,7 @@
 {
   "name": "MediaQuery",
   "description": "MediaQuery is a convenience element that allows you to define common form factor media queries, that when active, will apply a class to certain elements for easy targeting.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "keywords": [
     "element",
     "web-components",
